@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<!-- author: Anton Khlyzov -->
+
+<html lang = "en">
+<!-- The above html tag signifies the beginning of this web page -->
+
+<head>
+
+<meta charset="UTF-8" />
+<!-- The above meta tag tells the web browser of the character encoding selected for this web page -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The above meta tag tells the web browser to set the viewport of the web page as part of responsive web design -->
+
+<title>Desktops</title>
+<!-- The value in the above title tag will appear in the title bar of the web browser -->
+
+
+<style>
+
+/* main page styling */
+.container
+{
+    display: grid;
+	grid-gap: 10px;
+    grid-template-columns: 40fr 40fr;
+}
+/* product section styling */
+.product
+{
+	background-color: transparent;
+	border: none;
+    display: grid;
+    grid-template-columns: 15fr 25fr;
+	height: 100%;
+	width: 100%;
+}
+/* image styling */
+img
+{
+    height: 67%;
+    width: 50%;   
+    margin:auto;
+    grid-column: 1 ;
+    grid-row: 1 / 2;   
+    margin-top: 5px;
+}
+/* product description styling */
+article
+{
+    grid-column: 2 ;
+    grid-row: 1 / 2;       
+}
+/* product name styling */
+h3
+{
+    margin-top: 5px;
+    text-align: left;
+    font-size: 1.2em;
+    margin-bottom: 5px;  
+}
+/* product features styling */
+ul
+{
+    padding-left: 0px;
+}
+/* list styling */
+li 
+{       
+    list-style-type: square;
+}
+/* product price styling */
+h2
+{
+    color:#c53211; 
+    text-align: left;
+    margin-top: 0px;
+    font-size: 2em;
+}
+/* empty heading */
+h6
+{
+font-size:0px;
+display:none;
+}
+</style>
+
+</head>
+
+<body>
+
+    <main>
+     <!-- product page grid -->
+    <section class="container"> 
+        <h6>&nbsp;</h6>
+        <!-- product 1-->   
+	    <section class="product">
+            <h6>&nbsp;</h6>
+            <img src="HPEliteDesk.jpg" alt="HP">
+            <article>
+                <h3> HP EliteDesk 800 G1 USFF</h3>
+                <ul>
+                    <li>Intel Core i5-4570S - 2.9GHz Processor</li>
+                    <li>8GB DDR3 - 500GB HDD</li>
+                    <li>Microsoft Windows 10 Professional (64-Bit)</li>
+                    <li>Intel Integrated Graphics</li>
+                    <li>Six USB 2.0 Ports</li>
+                    <li>Tested Certified Refurbished</li>
+                </ul>
+                <h2>$300.00</h2>
+            </article>
+        </section>
+         <!-- product 2-->   
+        <section class="product">
+            <h6>&nbsp;</h6>
+            <img src="LenovoIdeaCentre.jpg" alt="Lenovo">
+            <article>
+                <h3>Lenovo IdeaCentre 3 </h3>
+                <ul>
+                    <li>AMD Athlon Silver 3050U Processor</li>
+                    <li>4GB DDR4 SDRAM - 256GB SSD</li>
+                    <li>Microsoft Windows 10 (64-Bit)</li>
+                    <li>AMD Radeon Graphics</li>
+                    <li>HDMI, 8 USB Ports, DVD-RW</li>
+                    <li>Wi-Fi 802.11, Bluetooth</li>
+                </ul>
+                <h2>$450.00</h2>
+            </article>
+        </section>
+         <!-- product 3-->   
+	    <section class="product">
+            <h6>&nbsp;</h6>
+            <img src="AcerAspire.jpg" alt="Aspire">
+            <article>
+                <h3>Acer Aspire TC-895-UA91</h3>
+                <ul>
+                    <li>Intel Core i3-10100 -Processor up to 4.3GHz</li>
+                    <li>8GB 2666MHz DDR4 - 512GB NVMe SSD</li>
+                    <li>Windows 10 Home ; 8X DVD-RW; 2 HDMI </li>
+                    <li>Intel UHD Graphics 630</li>
+                    <li>802.11ax Wi-Fi 6 - USB 3.2 Type C</li>
+                    <li>USB Keyboard and Mouse Included</li>
+                </ul>
+                <h2>$600.00</h2>
+            </article>
+        </section>
+         <!-- product 4-->   
+	    <section class="product">
+            <h6>&nbsp;</h6>
+            <img src="DellInspiration.jpg" alt="Dell">
+            <article>
+                <h3>Dell Inspiron Desktop 3880</h3>
+                <ul>
+                    <li>Intel Core i5 10th Gen</li>
+                    <li>12GB DDR4 SDRAM - 512GB SSD</li>
+                    <li>Microsoft Windows 10 Professional (64-Bit)</li>
+                    <li>Intel UHD Graphics 630</li>
+                    <li>4 USB Ports; 2 Year On-Site Service; No ODD</li>
+                    <li>Includes KB 216 Keyboard and Wired Mouse</li>
+                </ul>
+                <h2>$999.00</h2>
+            </article>
+        </section>
+
+    </section>
+
+    </main>
+
+</body>
+
+</html>

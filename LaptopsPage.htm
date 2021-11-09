@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<!-- author: Anton Khlyzov -->
+
+<html lang = "en">
+<!-- The above html tag signifies the beginning of this web page -->
+
+<head>
+
+<meta charset="UTF-8" />
+<!-- The above meta tag tells the web browser of the character encoding selected for this web page -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The above meta tag tells the web browser to set the viewport of the web page as part of responsive web design -->
+
+<title>Laptops</title>
+<!-- The value in the above title tag will appear in the title bar of the web browser -->
+
+<style>
+
+/* main page styling */
+.container
+{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 40fr 40fr;
+}
+/* product section styling */
+.product
+{
+  background-color: transparent;
+  border: none;
+  display: grid;
+  grid-template-columns: 15fr 25fr;
+  height: 100%;
+  width: 100%;
+}
+/* image styling */  
+img
+{
+  height: 60%;
+  width: 100%;     
+  margin:auto;
+  grid-column: 1 ;
+  grid-row: 1 / 2;       
+  margin-top: 5px;
+}
+/* product description styling */
+article
+{
+  grid-column: 2 ;
+  grid-row: 1 / 2;
+  padding-left: 20px;
+}
+/* product name styling */
+h3
+{
+  margin-top: 5px;
+  text-align: left;
+  font-size: 1.2em;
+  margin-bottom: 5px;      
+}
+/* product features styling */
+ul
+{
+  padding-left: 5px;
+}
+/* list styling */
+li 
+{       
+  list-style-type: square;
+}
+/* product price styling */
+h2
+{
+  color:#c53211; 
+  text-align: left;
+  margin-top: 0px;
+  font-size: 2em;
+}
+/* empty heading */
+h6
+{
+font-size:0px;
+display:none;
+}
+</style>
+  
+</head>
+  
+<body >
+  
+    <main>
+    <!-- product page grid -->  
+    <section class="container"> 
+        <h6>&nbsp;</h6>
+        <!-- product 1--> 
+        <section class="product">
+            <h6>&nbsp;</h6>  
+            <img src="HPLaptop.jpg" alt="HP">
+            <article>
+                <h3>HP EliteBook 840 G3</h3>
+                <ul>
+                    <li>14" Display ; 3.0 Display Port</li>
+                    <li>Core i5-6300U 2.4GHz processor</li>
+                    <li>Integrated Intel HD Graphics 520</li>
+                    <li>16GB DDR4 SDRAM - 500 GB SSD</li>
+                    <li>2 x USB ; 1.2; USB-C Port; VGA </li>
+                    <li>Windows 10 Pro 64bit, Docking Connector </li>
+                </ul>
+                <h2>$745.00</h2>
+            </article>
+        </section>
+        <!-- product 2--> 
+        <section class="product">
+            <h6>&nbsp;</h6> 
+            <img src="LenovoLaptop.jpg" alt="LenovoLaptop">
+            <article>
+                <h3>Lenovo IdeaPad 3 </h3>
+                <ul>
+                    <li>15.6" Full HD display 1920 x 1080 res</li>
+                    <li>10th Gen Intel Core i3-1005G1 processor</li>
+                    <li>Intel UHD Graphics</li>
+                    <li>8GB RAM, 256 GB SSD (PCI-e) </li>
+                    <li>2x USB 3.0, 1x USB 2.0, HDMI, Bluetooth</li>
+                    <li>Windows 10 Home ; WiFi 5 - 802.11 ac</li>
+                </ul>
+                <h2>$790.00</h2>
+            </article>
+        </section>
+        <!-- product 3--> 
+        <section class="product">
+            <h6>&nbsp;</h6> 
+            <img src="AsusLaptopM509.jpg" alt="AsusLaptop">
+            <article>
+                <h3>ASUS Laptop M509</h3>
+                <ul>
+                    <li>15.6 inch HD 4 way NanoEdge bezel display </li>
+                    <li>AMD R7-3700U Processor (up to 4 GHz)</li>
+                    <li>Radeon RX Vega 10 graphics</li>
+                    <li>8GB DDR4 RAM and 512GB PCIe SSD</li>
+                    <li>USB 3.2 and 2.0; HDMI; Wi-Fi 5(802.11ac)</li>
+                    <li>Windows 10 Home; Chiclet keyboard</li>
+                </ul>
+                <h2>$800.00</h2>
+            </article>
+        </section>
+        <!-- product 4-->
+        <section class="product">
+            <h6>&nbsp;</h6>
+            <img src="AcerSwift.jpg" alt="AcerSwift">
+            <article>
+                <h3>Acer Swift 3</h3>
+                <ul>
+                    <li>14" Full HD IPS WS LED Display</li>
+                    <li>AMD Ryzen 7 4700U Mobile Processor </li>
+                    <li>Radeon Graphics ; Lithium Ion Battery </li>
+                    <li>8GB LPDDR4 & 512GB PCIe NVMe SSD </li>
+                    <li>Bio-Protection Fingerprint Solution</li>
+                    <li>Windows 10 Home; 6 AX200 802.11ax </li>
+                </ul>
+                <h2>$955.00</h2>
+            </article>
+        </section>
+        
+  </section>
+  
+  </main>
+  
+</body>
+
+</html>

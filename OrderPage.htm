@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<!-- author: Anton Khlyzov -->
+
+<html lang = "en">
+<!-- The above html tag signifies the beginning of this web page -->
+
+<head>
+
+<meta charset="UTF-8" />
+<!-- The above meta tag tells the web browser of the character encoding selected for this web page -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The above meta tag tells the web browser to set the viewport of the web page as part of responsive web design -->
+
+<title>Order</title>
+<!-- The value in the above title tag will appear in the title bar of the web browser -->
+
+
+<style>
+
+/* main page styling */
+.container
+{
+	display: grid;
+	gap: 10px; 
+  grid-template-columns: 20fr 20fr 20fr;
+}
+/* product line name styling */
+h2
+{
+  font-size: 2vw;
+  place-self: center;
+  justify-self: end;
+}
+/* product model selection styling */
+select
+{
+  font-size: 1.5vw;
+  place-self: center;
+  width:100%;
+}
+/* product amount input styling */
+input
+{
+  font-size: 1.5vw;
+  place-self: center;
+  justify-self: start;
+  width:20%;
+}
+/* button container styling */
+section
+{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display:grid;
+  grid-template-columns:40fr 40fr;
+  gap:10px;
+}
+/* cancel button positioning */
+.right
+{
+  width:50%;
+  justify-self: end;
+  font-size: 1.5vw;
+}
+/* order button positioning */
+.left
+{
+  width:50%;
+  justify-self: start;
+  font-size: 1.5vw;
+}
+/* hidden element - order summary */
+.hide
+{
+  display:none;
+}
+/* container for order summary */
+footer
+{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-size: 1.1vw;
+}
+/* order summary heading*/
+h4
+{
+  margin-left: 30%;
+}
+/* order summary layout*/
+table
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 40%;
+  border: 1px solid #ddd;
+  margin-left: 30%;
+}
+/* order summary table styling*/
+th, td 
+{
+  text-align: left;
+  padding: 8px;
+}
+/* order summary table styling*/
+tr:nth-child(even)
+{
+  background-color: #f2f2f2;
+}
+/* empty heading */
+h6
+{
+font-size:0px;
+display:none;
+}
+</style>
+
+<script> 
+/* java script checks input*/
+  function fVerifyInput(evt)
+{		 
+  evt = (evt) ? evt : window.event;
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+
+  if ((charCode >= 48 && charCode <= 57)) 
+  {
+    return true;
+  }
+  return false;	
+}
+
+/* java script sends order confirmation alert and calculates and displays order summary*/
+function OrderFunction() {
+  alert("Thank you for your order!");
+//reveal hidden order summary
+  var f = document.getElementById("summary");
+  f.className= f.className.replace("hide", "");
+//grab product model name and price
+  var k = document.getElementById("DesktopsSelect").value;
+//split name and price
+  var x = k.split(",");
+//place product name into order summary table
+  document.getElementById("Desk1").innerHTML = x[0];
+//grab input amount
+  var y = document.getElementById("DeskNum").value;
+//check if input is empty
+  if(y=="")
+  {
+  y="0";
+  }
+  //place input amount into order summary table
+  document.getElementById("DeskAmnt").innerHTML = y;
+  //convert model price to integer
+  var a = parseInt(x[1],10); 
+  //convert input amount to integer
+  var b = parseInt(y,10); 
+  //calculate produxt line total
+  var c = a*b;
+  //place product line total into order summary table
+  document.getElementById("DeskTotal").innerHTML = c;
+
+  //repeat for second product line
+  var k1 = document.getElementById("MonitorsSelect").value;
+  var x1 = k1.split(",");
+  document.getElementById("Mon1").innerHTML = x1[0];
+  var y1 = document.getElementById("MonNum").value;
+  if(y1=="")
+  {
+  y1="0";
+  }
+  document.getElementById("MonAmnt").innerHTML = y1;
+  var a1 = parseInt(x1[1],10); 
+  var b1 = parseInt(y1,10); 
+  var c1 = a1*b1;
+  document.getElementById("MonTotal").innerHTML = c1;
+  
+  //repeat for third product line
+  var k2 = document.getElementById("LaptopsSelect").value;
+  var x2 = k2.split(",");
+  document.getElementById("Lap1").innerHTML = x2[0];
+  var y2 = document.getElementById("LapNum").value;
+  if(y2=="")
+  {
+  y2="0";
+  }
+  document.getElementById("LapAmnt").innerHTML = y2;
+  var a2 = parseInt(x2[1],10); 
+  var b2 = parseInt(y2,10); 
+  var c2 = a2*b2;
+  document.getElementById("LapTotal").innerHTML = c2;
+
+  //calculate product total
+  var total1 = c+c1+c2;
+  //calculate hst
+  var hst = total1*0.13;
+  //round hst to 2 decimal
+  var hst1 = hst.toFixed(2); 
+  //place hst into order summary table
+  document.getElementById("HST").innerHTML = hst1;
+
+  //calculate product total with hst
+  var total = total1+hst;
+  //round product total with hst to 2 decimals
+  var total2 = total.toFixed(2); 
+  //place total with hst into order summary table
+  document.getElementById("TOTAL").innerHTML = total2;
+}
+
+/* java script sends order cancellation alert and refreshes page*/
+function CancelFunction() {
+  alert("Your order has been cancelled!");
+  location.reload();
+}
+</script>
+</head>
+
+<body>
+
+    <main>
+    <!-- product order page grid -->  
+    <article class="container">
+          <!-- Order desktops -->
+            <h2>Desktops:</h2>
+
+            <select id="DesktopsSelect" name="Desktops" size="1">
+                <option value="Not Selected,0" disabled selected>Select Model</option>
+                <option value="HP EliteDesk 800 G1 USFF,300">HP EliteDesk 800 G1 USFF ($300.00)</option>
+                <option value="Lenovo IdeaCentre 3,450">Lenovo IdeaCentre 3 ($450.00)</option>
+                <option value="Acer Aspire TC-895-UA91,600">Acer Aspire TC-895-UA91 ($600.00)</option>
+                <option value="Dell Inspiron Desktop 3880,999">Dell Inspiron Desktop 3880 ($999.00)</option>
+            </select>
+      
+            <input id="DeskNum"
+            maxlength="3" 
+            onkeypress="return fVerifyInput(event);"
+            placeholder="max:999"
+            autocomplete="off"
+            onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false"
+            size="3"
+            type="text" />
+
+          <!-- Order monitors -->
+            <h2>Monitors:</h2>
+
+            <select id="MonitorsSelect" name="Monitors" size="1">
+                <option value="Not Selected,0" disabled selected>Select Model</option>
+                <option value="Acer SB220Q,250">Acer SB220Q ($250.00)</option>
+                <option value="LG 27EA430V-B,275">LG 27EA430V-B ($275.00)</option>
+                <option value="Samsung LS27F350FHNXZA,300">Samsung LS27F350FHNXZA ($300.00)</option>
+                <option value="Samsung Monitor T55,400">Samsung Monitor T55 ($400.00)</option>
+            </select>
+
+            <input id="MonNum"
+            maxlength="3" 
+            onkeypress="return fVerifyInput(event);"
+            placeholder="max:999"
+            autocomplete="off"
+            onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false"
+            size="3"
+            type="text" />
+
+          <!-- Order laptops -->
+            <h2> Laptops:</h2>
+
+            <select id="LaptopsSelect" name="Laptops" size="1">
+                <option value="Not Selected,0" disabled selected>Select Model</option>
+                <option value="HP EliteBook 840 G3,745">HP EliteBook 840 G3 ($745.00)</option>
+                <option value="Lenovo IdeaPad 3,790">Lenovo IdeaPad 3 ($790.00)</option>
+                <option value="ASUS Laptop M509,800">ASUS Laptop M509 ($800.00)</option>
+                <option value="Acer Swift 3,955">Acer Swift 3 ($955.00)</option>
+            </select>
+
+            <input id="LapNum"
+            maxlength="3" 
+            onkeypress="return fVerifyInput(event);"
+            placeholder="max:999"
+            autocomplete="off"
+            onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false"
+            size="3"
+            type="text" />
+
+          <!-- Buttons  -->
+        <section id="buttons">
+            <h6>&nbsp;</h6>
+            <button class="right" id="Order" accesskey="o" onclick="OrderFunction()" tabindex="1">Order Now</button>
+            <button class="left" id="Cancel" accesskey="c" onclick="CancelFunction()" tabindex="2">Cancel</button>
+        </section>
+      
+        <!-- Hidden product order summary  -->
+        <footer id="summary" class="hide">
+          <h4>Your oder summary:</h4>
+
+          <table>
+            <tr>
+              <th>Model</th>
+              <th>Number of Items</th>
+              <th>($)Amount</th>
+            </tr>
+            <tr>
+              <td id="Desk1"></td>
+              <td id="DeskAmnt"></td>
+              <td id="DeskTotal"></td>
+            </tr>
+            <tr>
+              <td id="Mon1"></td>
+              <td id="MonAmnt"></td>
+              <td id="MonTotal"></td>
+            </tr>
+            <tr>
+              <td id="Lap1"></td>
+              <td id="LapAmnt"></td>
+              <td id="LapTotal"></td>
+            </tr>
+            <tr>
+              <td ></td>
+              <td >HST (13%)</td>
+              <td id="HST"></td>
+            </tr>
+            <tr>
+              <td ></td>
+              <td >TOTAL:</td>
+              <td id="TOTAL"></td>
+            </tr>
+          </table>
+        </footer>
+
+    </article>
+    </main>
+
+</body>
+
+</html>

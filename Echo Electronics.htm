@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<!-- author: Anton Khlyzov -->
+
+<html lang = "en">
+<!-- The above html tag signifies the beginning of this web page -->
+
+<head>
+
+<meta charset="UTF-8" />
+<!-- The above meta tag tells the web browser of the character encoding selected for this web page -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The above meta tag tells the web browser to set the viewport of the web page as part of responsive web design -->
+
+<title>ECHO ELECTORNICS STORE</title>
+<!-- The value in the above title tag will appear in the title bar of the web browser -->
+
+<style>
+
+
+
+/* Header styling */
+header 
+{
+  padding: 1px;
+  text-align: center;
+  background: #c53211;
+  color:  #e6dbc9;
+  font-size: 0.8em;
+  font-family: serif; 
+}
+/* Store name styling */
+header h1
+{
+  font-size: 3em;
+  margin:0px;
+}
+/* Shadow effect for the store name*/
+.shadow 
+{
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
+}
+/*top navigation bar styling begins*/
+#menubar
+{
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    transition: all 0.3s linear;
+}
+/*top navigation bar shadow hover effect*/
+#menubar:hover 
+{
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+/*Styling links in the top nav bar*/   
+#menubar a 
+{
+  display: inline-block;
+  position: relative;
+  left: 30%; 
+  color: #e6dbc9;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: transform .2s; 
+ }
+/*hover over links effect*/
+#menubar a:hover
+{ 
+  color: #A4ADB1;
+  transform: scale(1.1);
+}
+/*active link styling*/
+#menubar a.active
+{
+  background-color: #A4ADB1;
+  color: rgb(17, 14, 14);
+  padding:16px;
+}
+/*top navigation bar styling ends*/
+
+
+/*iframe element styling*/
+iframe
+{
+	border: none;
+	display: block;
+	height: 75vh;
+	margin: 4vh auto;
+  width: 80%;	
+  box-shadow:	none;
+}
+/*body styling*/
+body
+{
+  margin: 0 auto;
+  font-family: Helvetica;
+}
+/*main styling*/
+main 
+{
+  padding: 5px;  
+}
+
+
+/*Decrease font size on smaller screens*/
+@media only screen and (max-width: 600px)
+ {
+    #menubar a 
+    {
+      font-size: 0.8em;
+      padding: 0;
+    }
+    header h1
+    {
+      font-size: 1em;
+    }
+  }
+
+/* Khaki Background color for menu bar*/
+.Khaki 
+{
+  background: #2e3830;
+}
+/* empty heading */
+h6
+{
+font-size:0px;
+display:none;
+}
+</style>
+
+<script>
+/* java script changes class on click active/inactive*/
+function classFunction(m) 
+ {
+var x = document.getElementById("menubar");
+var y = x.getElementsByTagName("a");
+for (var i = 0; i < y.length; i++) 
+{
+  y[i].className= y[i].className.replace("active", "");
+}
+    m.className = "active";
+}
+</script>
+</head>
+
+<body>
+    <header>
+      <h1 class="shadow">ECHO ELECTORNICS STORE</h1>
+    </header>
+
+      <nav class="Khaki" id="menubar">   
+        <a class="active" href="HomePage.htm" target="container" id="hm" onclick="classFunction(this)">Home</a>
+        <a href="DesktopsPage.htm" target="container" id="desk" onclick="classFunction(this)">Desktops</a>
+        <a href="MonitorsPage.htm" target="container" id="mon" onclick="classFunction(this)">Monitors</a>
+        <a href="LaptopsPage.htm" target="container" id="lap" onclick="classFunction(this)">Laptops</a>
+        <a href="OrderPage.htm" target="container" id="ord" onclick="classFunction(this)">Order</a>
+      </nav>
+
+  <main>  
+      <article>
+        <h6>&nbsp;</h6>
+			  <iframe name="container" src="HomePage.htm"></iframe>
+      </article>
+  </main>
+
+</body>
+
+</html>

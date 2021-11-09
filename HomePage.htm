@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<!-- author: Anton Khlyzov -->
+
+<html lang = "en">
+<!-- The above html tag signifies the beginning of this web page -->
+
+<head>
+
+<meta charset="UTF-8" />
+<!-- The above meta tag tells the web browser of the character encoding selected for this web page -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The above meta tag tells the web browser to set the viewport of the web page as part of responsive web design -->
+
+<title>Home Page</title>
+<!-- The value in the above title tag will appear in the title bar of the web browser -->
+
+<style>
+/* main page styling */
+.container
+{
+  display:grid;
+  grid-template-columns: 20fr 20fr 20fr;
+}
+
+/* first block styling */
+.first
+{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: #425664;
+  text-align: center;
+  font-size: 1.6vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+/* first block border styling */
+.boxgroove
+{
+  border-style: groove;
+  border-width: 7px;
+  border-color:whitesmoke;
+  border-radius: 10px;
+}
+/* first block text styling */
+.first h2
+{
+  color: #F6F4F2;
+  text-shadow: 0 2px 4px rgb(19, 17, 17); 
+}
+
+/* product 1 block styling */
+.a 
+{
+  background-color: #F6F4F2 ;
+  color: #425664;
+  text-align: center;
+}
+/* product 2 block styling */
+.b 
+{
+  background-color: #F6F4F2;
+  color: #425664;
+  text-align: center;
+}
+/* product 3 block styling */
+.c 
+{
+  background-color:#F6F4F2;
+  color: #425664;
+  text-align: center;
+}
+/* product block border styling */
+.boxoval
+{
+  border-style: outset;
+  border-width: 7px;
+  border-color: whitesmoke; 
+  border-radius: 10px;
+}
+/* product text shadow effect styling */
+.shadow 
+{
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
+}
+
+/* slideshow block styling */
+.slide
+{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2vw;
+}
+/* slide block border styling */
+.boxridge
+{
+  border-style: ridge;
+  border-width: 7px;
+  border-color:#F6F4F2;
+  border-radius: 10px;
+}
+/* first slide block styling */
+.one
+{
+  background-color: #B4D0E7;
+  color: #FAEBEFFF;
+}
+/* second slide block styling */
+.two
+{
+  color: #e0dfdc;
+  background-color:  #9CC089;
+}
+/* third slide block styling */
+.three
+{
+  background-color:#89ABE3FF;
+  color: #FCF6F5FF;
+}
+/* slide block text shadow effect */
+.deepshadow
+{   
+  letter-spacing: .1em;
+  text-shadow: 
+      0 -1px 0 #fff, 
+      0 1px 0 #2e2e2e, 
+      0 2px 0 #2c2c2c, 
+      0 3px 0 #2a2a2a, 
+      0 4px 0 #282828, 
+      0 5px 0 #262626, 
+      0 6px 0 #242424, 
+      0 7px 0 #222,  
+      0 8px 9px rgba(0, 0, 0, 0.9);
+}
+/* fading effect for the first slide */
+.fade
+{
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+/* fading animation */
+@keyframes fade
+{
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* sliding text effect animation for the second slide */
+.slide-right h2
+{
+  animation: 1s slide-right 1s forwards;
+  transform:translateX(-100%);
+}
+@keyframes slide-right
+{
+  to
+  {
+    transform:translateX(0);
+  }
+}
+/* typing text effect animation for the third slide */
+.typing h2
+{
+  overflow: hidden; 
+  white-space: nowrap; 
+  letter-spacing: .15em;
+  animation: type 3.5s steps(40, end), step-end forwards;
+}
+@keyframes type 
+{
+  from 
+  { 
+    width: 0 
+  }
+  to 
+  { 
+    width: 100% 
+  }
+}
+
+/* last block styling */
+.deals
+{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-image: url("laptopbackground.jpeg");
+  background-color: #343148FF;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  letter-spacing: .15em;
+  font-size: 3vw;
+  color: #D75A20;
+}
+/* last block border styling */
+.boxfade
+{
+  box-shadow:inset 0px 0px 5px 5px rgba(173, 166, 166, 0.884);
+  box-shadow:inset 0px 0px 10px 10px rgba(255,255,255,1);
+  box-shadow:inset 0px 0px 15px 15px rgba(255,255,255,1);
+}
+/* last block: keep text at the bottom */
+.deals h2
+{
+  margin-top: 11%;
+  margin-bottom: 2%;
+}
+/* last block: flame text effect */
+.flame 
+{
+  text-shadow: 0 0 20px #fefcc9,
+              10px -10px 30px #feec85,
+              -20px -20px 40px #ffae34,
+              20px -40px 50px #ec760c,
+              -20px -60px 60px #cd4606,
+              0 -80px 70px #973716,
+              10px -90px 80px #451b0e,
+              1px 1px 0 yellow,
+              2px 2px 0 orange,
+              3px 3px 0 red;
+}
+
+/* empty heading */
+h6
+{
+font-size:0px;
+display:none;
+}
+</style>
+</head>
+<body>
+  <main>
+    <article class="container">
+        <h6>&nbsp;</h6>
+        <section class="first boxgroove"> 
+          <h2>BUY ELECTRONICS FOR YOUR OFFICE</h2>
+        </section>
+        <section class="a boxoval shadow">    
+          <h2>DESKTOPS</h2>
+        </section>  
+        <section class="b boxoval shadow">
+          <h2> MONITORS</h2>
+        </section>
+        <section class="c boxoval shadow">    
+          <h2>LAPTOPS</h2>
+        </section>
+        <section class="slide one fade deepshadow boxridge">
+          <h2>SHOP FROM HOME </h2>
+        </section>
+        <section class="slide two deepshadow boxridge slide-right">
+          <h2>SHIPPING ACROSS GTA </h2>
+        </section>
+        <section class="slide three typing deepshadow boxridge">
+          <h2>DISCOUNTS ON ALL PRODUCTS </i></h2>
+        </section>
+        <section class="deals flame boxfade">
+          <h2>BEST DEALS</h2>
+        </section>
+    </article>
+  </main>
+<script>
+          /* java script changes slides automatically*/
+          var slideIndex = 0;
+          showSlides();
+          function showSlides() {
+            var slides = document.getElementsByClassName("slide");
+            for (var i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 7000); // Change slide every 7 seconds
+          }
+</script>
+</body>
+</html>

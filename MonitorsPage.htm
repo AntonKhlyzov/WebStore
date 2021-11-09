@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<!-- author: Anton Khlyzov -->
+
+<html lang = "en">
+<!-- The above html tag signifies the beginning of this web page -->
+
+<head>
+
+<meta charset="UTF-8" />
+<!-- The above meta tag tells the web browser of the character encoding selected for this web page -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The above meta tag tells the web browser to set the viewport of the web page as part of responsive web design -->
+
+<title>Monitors</title>
+<!-- The value in the above title tag will appear in the title bar of the web browser -->
+
+<style>
+
+/* main page styling */
+.container
+{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 40fr 40fr;
+}
+/* product section styling */
+.product
+{
+    background-color: transparent;
+    border: none;
+    display: grid;
+    grid-template-columns: 15fr 25fr;
+    height: 100%;
+    width: 100%;    
+}
+/* image styling */  
+img
+{
+    height: 67%;
+    width: 100%;     
+    margin:auto;
+    grid-column: 1 ;
+    grid-row: 1 / 2;     
+    margin-top: 5px;
+}
+/* product description styling */
+article
+{
+    grid-column: 2 ;
+    grid-row: 1 / 2;
+    padding-left: 20px;
+}
+/* product name styling */
+h3
+{
+    margin-top: 5px;
+    text-align: left;
+    font-size: 1.2em;
+    margin-bottom: 5px;    
+}
+/* product features styling */
+ul
+{
+    padding-left: 5px;
+}
+/* list styling */
+li 
+{       
+    list-style-type: square;
+}
+/* product price styling */
+h2
+{
+    color:#c53211;   
+    text-align: left;
+    margin-top: 0px;
+    font-size: 2em;
+}
+/* empty heading */
+h6
+{
+font-size:0px;
+display:none;
+}
+</style>
+  
+</head>
+  
+<body>
+  
+    <main>
+    <!-- product page grid -->  
+    <section class="container"> 
+        <h6>&nbsp;</h6>
+        <!-- product 1--> 
+        <section class="product">
+            <h6>&nbsp;</h6>
+            <img src="AcerSB220Q.jpg" alt="Acer">
+            <article>
+                <h3>Acer SB220Q</h3>
+                <ul>
+                    <li>21.5" full HD (1920 x 1080) </li>
+                    <li>Ultra-thin Widescreen IPS display</li>
+                    <li>Radeon free sync technology</li>
+                    <li>Refresh rate: 75hz - using HDMI port</li>
+                    <li>Ports: 1 x HDMI and 1 x VGA</li>
+                    <li>Zero-Frame design ; 4ms response time</li>
+                </ul>
+                <h2>$250.00</h2>
+            </article>
+        </section>
+  
+        <!-- product 2-->  
+        <section class="product">
+            <h6>&nbsp;</h6>
+            <img src="LG27EA430V.jpg" alt="LG">
+            <article>
+                <h3>LG 27EA430V-B</h3>
+                <ul>
+                    <li>27 Inch Full HD IPS Display</li>
+                    <li>AMD Freesync supported</li>
+                    <li>OnScreen Control, Dynamic Action Sync </li>
+                    <li>75Hz Refresh Rate, Black Stabilizer </li>
+                    <li>1000:1 Static Contrast Ratio</li>
+                    <li>HDMI, VGA Inputs, Wall Mountable</li>
+                </ul>
+                <h2>$275.00</h2>
+            </article>
+        </section>
+        
+        <!-- product 3--> 
+        <section class="product">
+            <h6>&nbsp;</h6>
+            <img src="SamsungLS.jpg" alt="Samsung">
+            <article>
+                <h3>Samsung LS27F350FHNXZA </h3>
+                <ul>
+                    <li>27 Inch Display 1920 x 1080</li>
+                    <li>Incredibly slim design</li>
+                    <li>AMD Freesync ; Brightness - 250 cd/m².</li>
+                    <li>Eye saver mode ; Extra wide viewing angle</li>
+                    <li>Viewing comfort and flicker free</li>
+                    <li>Contrast Ratio 1000 : 1 (Typ.), 700 : 1 (Min)</li>
+                </ul>
+                <h2>$300.00</h2>
+            </article>
+        </section>
+         
+        <!-- product 4--> 
+        <section class="product">
+            <h6>&nbsp;</h6>
+            <img src="SamsungCurved.jpg" alt="Curved">
+            <article>
+                <h3>Samsung Monitor T55</h3>
+                <ul>
+                    <li>32 inch Curved Display: 1000R curvature</li>
+                    <li>5 watt built in speaker</li>
+                    <li>AMD FreeSync & Multiple game modes</li>
+                    <li>Advanced 3000:1 Contrast Ratio ; VA panel</li>
+                    <li>Flicker Free and Eyesaver Mode</li>
+                    <li>HDMI, DP, D-Sub triple interface </li>
+                </ul>
+                <h2>$400.00</h2>
+            </article>
+        </section>
+  
+    </section>
+  
+    </main>
+  
+  
+  
+  </body>
+</html>
